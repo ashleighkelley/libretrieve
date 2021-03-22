@@ -1,0 +1,16 @@
+{
+  "name": "libretrieve",
+  "version": "1.0.0",
+  "description": "Utilizes node-isbn to retreive book information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashleigh Kelley (GitHub: ashleighkelley Discord:@shleigh)",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "google-books-search": "^0.3.1",
+    "price-finder": "^5.0.2"
+  }
+}
