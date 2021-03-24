@@ -1,12 +1,26 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const books = require("google-books-search");
-const PriceFinder = require("price-finder");
+const express = require("express");
+const { Client } = require('pg');
+
+/* --------------------------------------- */
+/*      Front End Functionality            */
+/* --------------------------------------- */
+const PORT = process.env.PORT || 3001;
+const app = express();
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server listening on ${PORT}`);
+});
 
 const client = new Discord.Client();
 client.login(config.BOT_TOKEN);
 
-const priceFinder = new PriceFinder();
+
 
 /* --------------------------------------- */
 /*         Bot Triggers                    */
@@ -18,9 +32,25 @@ client.on('ready', () => {
 });
 
 client.on('message', (message) => {
+
+    const db = new Client({
+        connectionString: 'process.env.DATABASE_URL',
+        //connectionString: 'postgres://qrplmiireoeccx:caa342b4d66e9a7c7b0ce20e9f879868124642b83a9b9e75576597ee44c67fd4@ec2-107-22-245-82.compute-1.amazonaws.com:5432/d64itfacvicl7j',
+        ssl: {
+            rejectUnauthorized: false
+        }
+    });
+
     if ((message.channel.name === 'book-club') && message.content.startsWith('!getbook')){
         sendSynopsis(message);
+    } else if ((message.channel.name === 'book-club') && message.content.startsWith('!pastbooks')){
+        sendHistory(message, db);
+    } else if ((message.channel.name === 'book-club') && message.content.startsWith('!addbook')){
+        addBook(message, db);
+    } else if ((message.channel.name === 'book-club') && message.content.startsWith('!bookhelp')){
+        sendHelp(message);
     }
+
 });
 
 
@@ -56,4 +86,65 @@ function sendSynopsis(message) {
             console.log('Encountered an error: ' + error);
         }
     });
+}
+
+function sendHistory(message, db) {
+    db.connect();
+
+    db.query('SELECT * FROM public."PastBooks" ORDER BY date desc', (err, res) => {
+        if (err) {
+            console.log('Error retrieving history: ' + err);
+            message.channel.send('Uh oh! Something went wrong. [' + err + ']');
+        } else {
+
+            var pastBooks='';
+
+            if (res.rowCount > 5) {
+                console.log(JSON.stringify(res.rows));
+                for (let i = 0; i < 5; i++){
+                    pastBooks += '\n' + res.rows[i].title + ' by ' + res.rows[i].author;
+                }
+            } else {
+                for (let row of res.rows) {
+                    pastBooks += '\n' + row.title + ' by ' + row.author;
+                }
+            }
+
+            message.channel.send(
+                '```Here are the most recent book picks:\n' + pastBooks + 
+                '\n\nView all previous picks here: https://libretrieve.herokuapp.com```'
+            );
+        }
+    });
+}
+
+function addBook(message, db) {
+    const queryString = message.content.substr(9);
+    const queryValues = queryString.split(" - ");
+
+    if (queryValues.length === 2){
+        
+        const queryString = 'INSERT INTO public."PastBooks" VALUES($1, $2, CURRENT_DATE)';
+        db.connect();
+        db
+            .query(queryString, queryValues)
+            .then(res => {
+                message.channel.send(queryValues[0] + ' has been successfully added.');
+                db.end();
+            })
+            .catch(err => {
+                message.channel.send('Uh oh, something went wrong inserting this book.');
+                console.log(err);
+            });
+    } else {
+        message.channel.send("Uh oh, something went wrong. I might not be smart enough to handle this book. Please confirm command used proper *title - author*  format");
+    }
+}
+
+function sendHelp(message) {
+    var helpResponse = '__Commands:__ \n' +
+        '**!getbook searchString** : returns synopsis/book details \n' +
+        '**!pastbooks** : returns most recent book club picks \n' +
+        '**!addbook title - author** : adds book to the list of book club picks \n';
+    message.channel.send(helpResponse);
 }
