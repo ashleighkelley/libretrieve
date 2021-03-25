@@ -4,26 +4,18 @@
   "description": "Utilizes node-isbn to retreive book information",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> b12e79cc40dbf852d4f041539287a4dcb77647ed
   },
   "author": "Ashleigh Kelley (GitHub: ashleighkelley Discord:@shleigh)",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1",
     "google-books-search": "^0.3.1",
-<<<<<<< HEAD
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "price-finder": "^5.0.2",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
-=======
-    "price-finder": "^5.0.2"
->>>>>>> b12e79cc40dbf852d4f041539287a4dcb77647ed
   }
 }
