@@ -100,6 +100,10 @@ function sendHistory(message, db) {
             var pastBooks='';
 
             if (res.rowCount > 5) {
+<<<<<<< HEAD
+=======
+                console.log(JSON.stringify(res.rows));
+>>>>>>> b12e79cc40dbf852d4f041539287a4dcb77647ed
                 for (let i = 0; i < 5; i++){
                     pastBooks += '\n' + res.rows[i].title + ' by ' + res.rows[i].author;
                 }
