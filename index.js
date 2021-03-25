@@ -25,6 +25,7 @@ client.login(config.BOT_TOKEN);
 client.on('ready', () => {
 		
     console.log('libretrieve bot up and running');
+    console.log(process.env.DATABASE_URL);
     
 });
 
@@ -88,12 +89,9 @@ function sendSynopsis(message) {
 function sendHistory(message, db) {
     db.connect();
 
-    db.query('SELECT * FROM public."PastBooks" ORDER BY date desc', (err, res) => {
-        if (err) {
-            console.log('Error retrieving history: ' + err);
-            message.channel.send('Uh oh! Something went wrong. [' + err + ']');
-        } else {
-
+    db
+        .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
+        .then (res => {
             var pastBooks='';
 
             if (res.rowCount > 5) {
@@ -107,11 +105,15 @@ function sendHistory(message, db) {
             }
 
             message.channel.send(
-                '```Here are the most recent book picks:\n' + pastBooks + 
-                '\n\nView all previous picks here: https://libretrieve.herokuapp.com```'
+                '>>>Here are the most recent book picks:\n' + pastBooks + 
+                '\n\nView all previous picks here: https://libretrieve.herokuapp.com'
             );
-        }
-    });
+            db.end();
+        })
+        .catch(err => {
+            console.log('Error retrieving history: ' + err);
+            message.channel.send('Uh oh! Something went wrong. [' + err + ']');
+        });
 }
 
 function addBook(message, db) {
