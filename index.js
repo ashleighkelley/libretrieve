@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const config = require("./config.json");
 const books = require("google-books-search");
 const express = require("express");
-const { Client } = require('pg');
+const { Pool, Client } = require('pg');
 
 /* --------------------------------------- */
 /*      Front End Functionality            */
@@ -31,9 +31,10 @@ client.on('ready', () => {
 
 client.on('message', (message) => {
 
-    const db = new Client({
+    const db = new Pool({
         connectionString: 'process.env.DATABASE_URL',
         //connectionString: 'postgres://qrplmiireoeccx:caa342b4d66e9a7c7b0ce20e9f879868124642b83a9b9e75576597ee44c67fd4@ec2-107-22-245-82.compute-1.amazonaws.com:5432/d64itfacvicl7j',
+
         ssl: {
             rejectUnauthorized: false
         }
@@ -105,10 +106,9 @@ function sendHistory(message, db) {
             }
 
             message.channel.send(
-                '>>>Here are the most recent book picks:\n' + pastBooks + 
+                '>>> Here are the most recent book picks:\n' + pastBooks + 
                 '\n\nView all previous picks here: https://libretrieve.herokuapp.com'
             );
-            db.end();
         })
         .catch(err => {
             console.log('Error retrieving history: ' + err);
