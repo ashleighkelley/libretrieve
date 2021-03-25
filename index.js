@@ -14,6 +14,14 @@ app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
 
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+});
+
+
+/* --------------------------------------- */
+/*          Discord Bot Login              */
+/* --------------------------------------- */
 const client = new Discord.Client();
 client.login(config.BOT_TOKEN);
 
