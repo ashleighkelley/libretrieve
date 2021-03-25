@@ -32,7 +32,7 @@ client.on('ready', () => {
 client.on('message', (message) => {
 
     const db = new Pool({
-        connectionString: 'process.env.DATABASE_URL',
+        connectionString: process.env.DATABASE_URL,
         //connectionString: 'postgres://qrplmiireoeccx:caa342b4d66e9a7c7b0ce20e9f879868124642b83a9b9e75576597ee44c67fd4@ec2-107-22-245-82.compute-1.amazonaws.com:5432/d64itfacvicl7j',
 
         ssl: {
