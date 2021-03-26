@@ -4,6 +4,15 @@ const books = require("google-books-search");
 const express = require("express");
 const { Pool, Client } = require('pg');
 
+const db = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    //connectionString: 'postgres://qrplmiireoeccx:caa342b4d66e9a7c7b0ce20e9f879868124642b83a9b9e75576597ee44c67fd4@ec2-107-22-245-82.compute-1.amazonaws.com:5432/d64itfacvicl7j',
+
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
 /* --------------------------------------- */
 /*      Front End Functionality            */
 /* --------------------------------------- */
@@ -20,6 +29,26 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
+app.get('*/pastpicks', (req, res) => {
+    db.connect();
+
+    db
+        .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
+        .then (results => {
+            return res.json({ 
+                data: results
+            });
+        })
+        .catch(err => {
+            console.log('Error retrieving history: ' + err);
+            return res.send(err);
+        });
+});
+
+app.get('*/pastsuggestions', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
 
 /* --------------------------------------- */
 /*          Discord Bot Login              */
@@ -32,23 +61,11 @@ client.login(config.BOT_TOKEN);
 /* --------------------------------------- */
 /*         Bot Triggers                    */
 /* --------------------------------------- */
-client.on('ready', () => {
-		
+client.on('ready', () => {	
     console.log('libretrieve bot up and running');
-    console.log(process.env.DATABASE_URL);
-    
 });
 
 client.on('message', (message) => {
-
-    const db = new Pool({
-        connectionString: process.env.DATABASE_URL,
-        //connectionString: 'postgres://qrplmiireoeccx:caa342b4d66e9a7c7b0ce20e9f879868124642b83a9b9e75576597ee44c67fd4@ec2-107-22-245-82.compute-1.amazonaws.com:5432/d64itfacvicl7j',
-
-        ssl: {
-            rejectUnauthorized: false
-        }
-    });
 
     if ((message.channel.name === 'book-club') && message.content.startsWith('!getbook')){
         sendSynopsis(message);

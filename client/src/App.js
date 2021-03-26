@@ -1,34 +1,52 @@
-import Table from 'react-bootstrap/Table';
+import React, { useState } from 'react';
+import Books from './Books';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
+  //need to pass items from query?
+  const [pastPicks, setPastPicks] = useState([]);
+  const [pastSuggestions, setPastSuggestions] = useState([]);
+
+  const getPicks = () => {
+    
+    fetch('*/pastPicks')
+      .then(res => res.json())
+      .then(picks => {
+        console.log(JSON.stringify(res));
+      });
+
+    setPastPicks();
+  };
+
+  const getSuggestions = () => {
+    setPastSuggestions();
+  };
+
   return (
-    <>
-      <header className="App">
-        <h1>Creature Club Book Club</h1>
-      </header>
+      <main>
+        <div className="title">
+          <h1>Creature Club Book Club</h1>
+          <div className="underline"></div>
+        </div>
 
-      <body>
-        <h3>Past Book Choices</h3>
+        <div className="btn-container">
+          <button
+            type="button"
+            className="menu-btn"
+            onClick={() => getPicks()}
+          >Past Picks</button>
 
-        <Table striped bordered hover size="med">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Blankets</td>
-              <td>Craig Thompson</td>
-              <td>March 2021</td>
-            </tr>
-          </tbody>
-        </Table>
-      </body>
-    </>
+          <button
+            type="button"
+            className="menu-btn"
+            onClick={() => getSuggestions()}
+          >Past Suggestions</button>
+        </div>
+
+        
+        <Books items={pastPicks} />
+      </main>
   );
 }
 
