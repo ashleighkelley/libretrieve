@@ -76,7 +76,11 @@ client.on('message', (message) => {
     } else if ((message.channel.name === 'book-club') && message.content.startsWith('!bookhelp')){
         sendHelp(message);
     }
-
+    
+    //For Tampa discord - clean this up later
+    if ((message.channel.name === 'books') && message.content.startsWith('!getbook')){
+        sendSynopsis(message);
+    }
 });
 
 
