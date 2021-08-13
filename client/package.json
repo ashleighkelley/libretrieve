@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://libretrieve.herokuapp.com:5000"
+  "proxy": "http://libretrieve.herokuapp.com:process.env.PORT"
 }
