@@ -1,53 +1,63 @@
-import React, { useState } from 'react';
-import Books from './Books';
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+// import pages
+import PastPicks from './pages/PastPicks'
+import PastSuggestions from './pages/PastSuggestions'
+import Error from './pages/Error'
+
+// import components
+import Navbar from './components/Navbar'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 
-  //need to pass items from query?
-  const [pastPicks, setPastPicks] = useState([]);
-  const [pastSuggestions, setPastSuggestions] = useState([]);
+  const [book, setBook] = React.useState(null);
 
-  const getPicks = () => {
-    
-    fetch('*/pastPicks')
-      .then(res => res.json())
-      .then(picks => {
-        console.log(JSON.stringify(res));
-      });
+  React.useEffect(() => {
+    fetch("/picks")
+      .then((res) => res.json())
+      .then((book) => setBook(book));
+  }, []);
 
-    setPastPicks();
-  };
 
-  const getSuggestions = () => {
-    setPastSuggestions();
-  };
+  /*return (
+      <main>
+
+        <Table striped bordered hover size="med">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <Books items={bookList} />
+        </Table>
+      </main>
+  );*/
 
   return (
-      <main>
-        <div className="title">
-          <h1>Creature Club Book Club</h1>
-          <div className="underline"></div>
-        </div>
-
-        <div className="btn-container">
-          <button
-            type="button"
-            className="menu-btn"
-            onClick={() => getPicks()}
-          >Past Picks</button>
-
-          <button
-            type="button"
-            className="menu-btn"
-            onClick={() => getSuggestions()}
-          >Past Suggestions</button>
-        </div>
-
-        
-        <Books items={pastPicks} />
-      </main>
-  );
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path="/">
+          <PastPicks/>
+        </Route>
+        <Route path="/picks">
+          <PastPicks/>
+        </Route>
+        <Route path="/suggestions">
+          <PastSuggestions/>
+        </Route>
+        <Route path="*">
+          <Error/>
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;

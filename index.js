@@ -29,15 +29,13 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-app.get('*/pastpicks', (req, res) => {
+app.get('*/picks', (req, res) => {
     db.connect();
 
     db
         .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
         .then (results => {
-            return res.json({ 
-                data: results
-            });
+            return res.send(results);
         })
         .catch(err => {
             console.log('Error retrieving history: ' + err);
@@ -45,7 +43,7 @@ app.get('*/pastpicks', (req, res) => {
         });
 });
 
-app.get('*/pastsuggestions', (req, res) => {
+app.get('*/suggestions', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
@@ -172,4 +170,24 @@ function sendHelp(message) {
         '**!pastbooks** : returns most recent book club picks \n' +
         '**!addbook title - author** : adds book to the list of book club picks \n';
     message.channel.send(helpResponse);
+}
+
+function getFullHistory() {
+    db.connect();
+
+    db
+        .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
+        .then (res => {
+            var pastBooks='';
+            for (let row of res.rows) {
+                pastBooks += '\n' + row.title + ' by ' + row.author;
+            }
+        })
+        .catch(err => {
+            console.log('Error retrieving history: ' + err);
+        });
+}
+
+module.exports = {
+    getFullHistory,
 }
