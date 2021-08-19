@@ -35,6 +35,7 @@ app.get('*/picks', (req, res) => {
     db
         .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
         .then (results => {
+            console.log(results);
             return res.send(results);
         })
         .catch(err => {
@@ -44,6 +45,7 @@ app.get('*/picks', (req, res) => {
 });
 
 app.get('*/suggestions', (req, res) => {
+    console.log(results);
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
