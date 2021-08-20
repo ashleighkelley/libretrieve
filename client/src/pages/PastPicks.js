@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function PastPicks() {
   
@@ -17,11 +18,10 @@ export default function PastPicks() {
     }
 
     getBooks();
-  }, [books]);
+  }, []);
 
   return (
     <main>
-      <div className='cocktail'>
         <Table striped bordered hover size="med">
           <thead>
             <tr>
@@ -40,7 +40,6 @@ export default function PastPicks() {
           </thead>
           
         </Table>
-      </div>
     </main>
   )
 }
