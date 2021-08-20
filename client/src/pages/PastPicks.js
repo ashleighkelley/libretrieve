@@ -5,19 +5,19 @@ export default function PastPicks() {
   
   const [books, setBooks] = useState([]);
 
-  const url = "http://libretrieve.herokuapp.com/picks";
-
-  const getBooks = async () => {
-    console.log("Getting books...");
-    const response = await fetch(url);
-    const data = await response.json();
-    setBooks(data.rows);
-    console.log(books);
-  }
+  const url = "https://libretrieve.herokuapp.com/picks";
 
   useEffect(() => {
+    const getBooks = async () => {
+      console.log("Getting books...");
+      const response = await fetch(url);
+      const data = await response.json();
+      setBooks(data.rows);
+      console.log(books);
+    }
+
     getBooks();
-  });
+  }, [books]);
 
   return (
     <main>
