@@ -42,9 +42,19 @@ app.get('*/picks', (req, res) => {
 });
 
 app.get('*/suggestions', (req, res) => {
-    console.log('Retrieving suggestions...');
-    console.log(results);
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    console.log('Retrieving suggestions... NOT YET IMPLEMENTED');
+    /*db.connect();
+
+    db
+        .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
+        .then (results => {
+            console.log(results);
+            return res.send(results);
+        })
+        .catch(err => {
+            console.log('Error retrieving history: ' + err);
+            return res.send(err);
+        });*/
 });
 
 app.get('*', (req, res) => {

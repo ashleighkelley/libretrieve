@@ -5,9 +5,9 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
-  const [page, setPage] = useState['picks'];
 
   const url = "http://libretrieve.herokuapp.com:5000/";
+  const page = "picks";
 
   const fetchBooks = useCallback( async() => {
     try {
@@ -42,7 +42,7 @@ const AppProvider = ({ children }) => {
   }, [page,fetchBooks])
 
   return( <AppContext.Provider value={{
-    books
+    books, page
   }}>
     {children}
     </AppContext.Provider>

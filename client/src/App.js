@@ -14,13 +14,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  const [book, setBook] = React.useState(null);
+  /*const [book, setBook] = React.useState(null);
 
   React.useEffect(() => {
     fetch("/picks")
       .then((res) => res.json())
       .then((book) => setBook(book));
-  }, []);
+  }, []);*/
 
 
   /*return (
