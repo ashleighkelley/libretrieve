@@ -26,18 +26,10 @@ function App() {
     <Router>
       <Navbar/>
       <Switch>
-        <Route path="/">
-          <PastPicks/>
-        </Route>
-        <Route path="/pastpicks">
-          <PastPicks/>
-        </Route>
-        <Route path="/pastsuggestions">
-          <PastSuggestions/>
-        </Route>
-        <Route path="*">
-          <Error/>
-        </Route>
+        <Route path="/pastpicks" component={PastPicks}/>
+        <Route path="/pastsuggestions" component={PastSuggestions}/>
+        <Route path="/" component={PastPicks}/>
+        <Route path="*" component={Error}/>
       </Switch>
     </Router>
   )

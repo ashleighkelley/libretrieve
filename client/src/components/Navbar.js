@@ -9,10 +9,10 @@ export default function Navbar() {
         </div>
         <ul className='nav-links'>
           <li>
-            <Link to='/picks'>Past Picks</Link>
+            <Link to='/pastpicks'>Past Picks</Link>
           </li>
           <li>
-            <Link to='/suggestions'>Past Suggestions</Link>
+            <Link to='/pastsuggestions'>Past Suggestions</Link>
           </li>
         </ul>
       </div>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Table from 'react-bootstrap/Table';
 
 export default function PastPicks() {
@@ -7,11 +7,17 @@ export default function PastPicks() {
 
   const url = "http://libretrieve.herokuapp.com/picks";
 
-  const getPerson = async () => {
+  const getBooks = async () => {
+    console.log("Getting books...");
     const response = await fetch(url);
     const data = await response.json();
-    const books = data.rows;
+    setBooks(data.rows);
+    console.log(books);
   }
+
+  useEffect(() => {
+    getBooks();
+  });
 
   return (
     <main>
