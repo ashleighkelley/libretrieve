@@ -5,6 +5,41 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
+  const [page, setPage] = useState['picks'];
+
+  const url = "http://libretrieve.herokuapp.com:5000/";
+
+  const fetchBooks = useCallback( async() => {
+    try {
+      const response = await fetch(`${url}${page}`);
+      const data = await response.json();
+      console.log(data);
+      const { books } = data;
+      if (books) {
+        const bookPicks = books.map((item) => {
+          const {
+            title,
+            author,
+            date,
+          } = item;
+
+          return {
+            title: title,
+            author: author,
+            date: date,
+          }
+        })
+        setBooks(bookPicks);
+      } else {
+        setBooks([]);
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  },[page])
+  useEffect(() => {
+    fetchBooks()
+  }, [page,fetchBooks])
 
   return( <AppContext.Provider value={{
     books

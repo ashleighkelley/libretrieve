@@ -30,6 +30,7 @@ app.use(express.static('client/build'));
 });*/
 
 app.get('*/picks', (req, res) => {
+    console.log('Retrieving picks...');
     db.connect();
 
     db
@@ -45,6 +46,7 @@ app.get('*/picks', (req, res) => {
 });
 
 app.get('*/suggestions', (req, res) => {
+    console.log('Retrieving suggestions...');
     console.log(results);
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
