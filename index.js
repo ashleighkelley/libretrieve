@@ -32,7 +32,7 @@ app.get('*/picks', (req, res) => {
     db
         .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
         .then (results => {
-            console.log(results);
+            //console.log(results);
             return res.send(results);
         })
         .catch(err => {
@@ -48,7 +48,7 @@ app.get('*/suggestions', (req, res) => {
     db
         .query('SELECT * FROM public."PastBooks" ORDER BY date desc')
         .then (results => {
-            console.log(results);
+            //console.log(results);
             return res.send(results);
         })
         .catch(err => {

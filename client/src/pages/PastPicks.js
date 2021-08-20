@@ -14,7 +14,6 @@ export default function PastPicks() {
       const response = await fetch(url);
       const data = await response.json();
       setBooks(data.rows);
-      console.log(books);
     }
 
     getBooks();
