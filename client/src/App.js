@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // import pages
@@ -22,23 +22,6 @@ function App() {
       .then((book) => setBook(book));
   }, []);*/
 
-
-  /*return (
-      <main>
-
-        <Table striped bordered hover size="med">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <Books items={bookList} />
-        </Table>
-      </main>
-  );*/
-
   return (
     <Router>
       <Navbar/>
@@ -46,10 +29,10 @@ function App() {
         <Route path="/">
           <PastPicks/>
         </Route>
-        <Route path="/picks">
+        <Route path="/pastpicks">
           <PastPicks/>
         </Route>
-        <Route path="/suggestions">
+        <Route path="/pastsuggestions">
           <PastSuggestions/>
         </Route>
         <Route path="*">

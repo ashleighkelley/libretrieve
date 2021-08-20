@@ -17,11 +17,11 @@ const { books } = useGlobalContext();
             </tr>
 
             {books.map((item) => {
-              <tr>
+              return (<tr>
                 <td>{item.title}</td>
                 <td>{item.author}</td>
                 <td>{item.date}</td>
-              </tr>
+              </tr>)
             })}
           </thead>
           
