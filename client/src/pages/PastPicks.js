@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Table from 'react-bootstrap/Table';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css'
 
 export default function PastPicks() {
   
@@ -21,8 +21,9 @@ export default function PastPicks() {
 
   return (
     <main>
-        <Table striped bordered hover size="med">
-          <thead>
+      <div className="table">
+        <Table bordered hover size="med">
+          <thead className="table-header">
             <tr>
               <th>Title</th>
               <th>Author</th>
@@ -39,6 +40,7 @@ export default function PastPicks() {
           </thead>
           
         </Table>
+      </div>
     </main>
   )
 }
