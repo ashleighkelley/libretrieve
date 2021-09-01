@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Table from 'react-bootstrap/Table';
 import '../App.css'
+import Moment from 'moment';
 
 export default function PastPicks() {
   
@@ -28,15 +29,13 @@ export default function PastPicks() {
             <th>Author</th>
             <th>Date</th>
           </tr>
-          <div className="table-rows">
           {books.map && books.map((item) => {
             return (<tr>
               <td>{item.title}</td>
               <td>{item.author}</td>
-              <td>{item.date}</td>
+              <td>{Moment(item.date).format('MMM YYYY')}</td>
               </tr>)
             })}
-          </div>
         </thead>
         
       </Table>

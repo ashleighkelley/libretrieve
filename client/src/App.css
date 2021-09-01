@@ -166,6 +166,7 @@ Table
 .table-rows {
   color: var(--text);
   background: var(--table-background);
+  opacity: 90%;
 }
 
 /* 
