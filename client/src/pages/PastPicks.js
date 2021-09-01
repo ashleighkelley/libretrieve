@@ -28,14 +28,15 @@ export default function PastPicks() {
             <th>Author</th>
             <th>Date</th>
           </tr>
-
+          <div className="table-rows">
           {books.map && books.map((item) => {
             return (<tr>
               <td>{item.title}</td>
               <td>{item.author}</td>
               <td>{item.date}</td>
-            </tr>)
-          })}
+              </tr>)
+            })}
+          </div>
         </thead>
         
       </Table>
