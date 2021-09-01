@@ -33,7 +33,7 @@ export default function PastPicks() {
             return (<tr>
               <td>{item.title}</td>
               <td>{item.author}</td>
-              <td>{Moment(item.date).format('MMM YYYY')}</td>
+              <td>{Moment(item.date).format('M/D/YYYY')}</td>
               </tr>)
             })}
         </thead>
