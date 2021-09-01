@@ -21,26 +21,24 @@ export default function PastPicks() {
 
   return (
     <main>
-      <div className="table">
-        <Table bordered hover size="med">
-          <thead className="table-header">
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Date</th>
-            </tr>
+      <Table bordered hover size="med" className="table">
+        <thead className="table-header">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+          </tr>
 
-            {books.map((item) => {
-              return (<tr>
-                <td>{item.title}</td>
-                <td>{item.author}</td>
-                <td>{item.date}</td>
-              </tr>)
-            })}
-          </thead>
-          
-        </Table>
-      </div>
+          {books.map && books.map((item) => {
+            return (<tr>
+              <td>{item.title}</td>
+              <td>{item.author}</td>
+              <td>{item.date}</td>
+            </tr>)
+          })}
+        </thead>
+        
+      </Table>
     </main>
   )
 }

@@ -9,6 +9,7 @@ Album Themes
   --page-background: #e4e3e8;
   --table-header: #c0bec1;
   --table-header-text: #4e5253;
+  --table-background: #f9d317;
   --title: #f9d317;
   --title-shadow: #ca5458;
   --btn: #f9d317;
@@ -24,6 +25,7 @@ Album Themes
   --page-background: #375466;
   --table-header: #516278;
   --table-header-text: #f6c221;
+  --table-background: #968952;
   --title: #968952;
   --title-shadow: #4f3d15;
   --btn: #516278;
@@ -31,14 +33,15 @@ Album Themes
   --btn-border: #4a89ad;
   --nav-border: #f6c221;
   --dropdown-text: #f6c221;
-  --text: #4a89ad;
+  --text: #8d2429;
 }
 
 .juturna {
-  --title-background: #b9cac7;
+  --title-background: #b6b9b9;
   --page-background: #d9dcda;
   --table-header: #252a11;
-  --table-header-text: #b9cac7;
+  --table-header-text: #b6b9b9;
+  --table-background: #b6b9b9;
   --title: #d3612c;
   --title-shadow: #da9964;
   --btn: #d3612c;
@@ -46,7 +49,7 @@ Album Themes
   --btn-border: #252a11;
   --nav-border: #252a11;
   --dropdown-text: #56100a;
-  --text: #56100a;
+  --text: #d3612c;
 }
 
 .bsn {
@@ -54,6 +57,7 @@ Album Themes
   --page-background: #86b0b9;
   --table-header: #3e3f1f;
   --table-header-text: #b9cac7;
+  --table-background: #f5d43b;
   --title: #e02843;
   --title-shadow: #f5d43b;
   --btn: #f5d43b;
@@ -68,7 +72,8 @@ Album Themes
   --title-background: #5f3e58;
   --page-background: #000002;
   --table-header: #5f3e58;
-  --table-header-text: #e9eae5;
+  --table-header-text: #95d7e9;
+  --table-background: #e9eae5;
   --title: #e9eae5;
   --title-shadow: #95d7e9;
   --btn: #95d7e9;
@@ -76,7 +81,7 @@ Album Themes
   --btn-border: #000002;
   --nav-border: #95d7e9;
   --dropdown-text: #95d7e9;
-  --text: #e9eae5;
+  --text: #5f3e58;
 }
 
 .descensus {
@@ -84,6 +89,7 @@ Album Themes
   --page-background: #acccdb;
   --table-header: #47a7e6;
   --table-header-text: #1b364b;
+  --table-background: #fbb425;
   --title: #fbb425;
   --title-shadow: #47a7e6;
   --btn: #fbb425;
@@ -145,7 +151,7 @@ Table
 ======
 */
 .table {
-  background: var(--page-background);
+  background: var(--table-background);
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
