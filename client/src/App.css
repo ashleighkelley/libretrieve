@@ -7,9 +7,9 @@ Album Themes
 .amulet {
   --title-background: #43443f;
   --page-background: #e4e3e8;
-  --table-header: #c0bec1;
+  --table-header: #f9d317;
   --table-header-text: #4e5253;
-  --table-background: #f9d317;
+  --table-background: #c0bec1;
   --title: #f9d317;
   --title-shadow: #ca5458;
   --btn: #f9d317;
@@ -55,9 +55,9 @@ Album Themes
 .bsn {
   --title-background: #b9d0d6;
   --page-background: #86b0b9;
-  --table-header: #e02843;
-  --table-header-text: #b9cac7;
-  --table-background: #f5d43b;
+  --table-header: #f5d43b;
+  --table-header-text: #3e3f1f;
+  --table-background: #e02843;
   --title: #e02843;
   --title-shadow: #f5d43b;
   --btn: #f5d43b;
@@ -65,7 +65,7 @@ Album Themes
   --btn-border: #e02843;
   --nav-border: #f5d43b;
   --dropdown-text: #e02843;
-  --text: #3e3f1f;
+  --text: #b9cac7;
 }
 
 .waves {
@@ -155,11 +155,11 @@ Table
   margin-right: auto;
   margin-top: 5%;
   width: 75%;
+  text-align: center;
 }
 
 .table-header {
   background: var(--table-header);
-  text-align: center;
   color: var(--table-header-text);
 }
 
