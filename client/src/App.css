@@ -163,7 +163,7 @@ Table
   color: var(--table-header-text);
 }
 
-.table-rows {
+tr {
   color: var(--text);
   background: var(--table-background);
   opacity: 90%;
