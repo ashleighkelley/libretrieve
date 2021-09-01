@@ -21,7 +21,7 @@ export default function PastPicks() {
 
   return (
     <main>
-      <Table bordered hover size="med" className="table">
+      <Table hover size="med">
         <thead className="table-header">
           <tr>
             <th>Title</th>

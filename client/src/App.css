@@ -151,18 +151,21 @@ Table
 ======
 */
 .table {
-  background: var(--table-background);
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
   width: 75%;
-  color: var(--text);
 }
 
 .table-header {
   background: var(--table-header);
   text-align: center;
   color: var(--table-header-text);
+}
+
+.table-rows {
+  color: var(--text);
+  background: var(--table-background);
 }
 
 /* 
