@@ -29,14 +29,15 @@ export default function PastPicks() {
             <th>Author</th>
             <th>Date</th>
           </tr>
-          {books.map && books.map((item) => {
-            return (<tr>
-              <td>{item.title}</td>
-              <td>{item.author}</td>
-              <td>{Moment(item.date).format('M/D/YYYY')}</td>
-              </tr>)
-            })}
         </thead>
+        {books.map && books.map((item) => {
+          return (<tr>
+            <td>{item.title}</td>
+            <td>{item.author}</td>
+            <td>{Moment(item.date).format('M/D/YYYY')}</td>
+            </tr>)
+          })}
+        
         
       </Table>
     </main>
