@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const config = require("./config.json");
 const books = require("google-books-search");
 const express = require("express");
 const { Pool, Client } = require('pg');
