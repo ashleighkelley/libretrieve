@@ -66,7 +66,8 @@ app.get('*', (req, res) => {
 /*          Discord Bot Login              */
 /* --------------------------------------- */
 const client = new Discord.Client();
-client.login(config.BOT_TOKEN);
+//client.login(config.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
 
 
 

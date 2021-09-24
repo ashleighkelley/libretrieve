@@ -55,8 +55,8 @@ Album Themes
 .bsn {
   --title-background: #b9d0d6;
   --page-background: #86b0b9;
-  --table-header: #f5d43b;
-  --table-header-text: #3e3f1f;
+  --table-header: #e02843;
+  --table-header-text: #b9d0d6;
   --table-background: #2394af;
   --title: #e02843;
   --title-shadow: #f5d43b;
@@ -65,7 +65,7 @@ Album Themes
   --btn-border: #e02843;
   --nav-border: #f5d43b;
   --dropdown-text: #e02843;
-  --text: #e02843;
+  --text: #f5d43b;
 }
 
 .waves {
