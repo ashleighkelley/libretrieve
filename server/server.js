@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const books = require("google-books-search");
 const express = require("express");
-const config = require("./config.json");
+//const config = require("./config.json");
 const commands = require("./botCommands");
 const { Pool, Client } = require('pg');
 
