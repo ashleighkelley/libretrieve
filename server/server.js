@@ -161,7 +161,7 @@ function addBook(message, db) {
             .query(queryString, queryValues)
             .then(res => {
                 message.channel.send(queryValues[0] + ' has been successfully added.');
-                db.end();
+                //db.end();
             })
             .catch(err => {
                 message.channel.send('Uh oh, something went wrong inserting this book.');
