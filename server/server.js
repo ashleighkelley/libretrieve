@@ -79,7 +79,7 @@ client.on('ready', () => {
 
 client.on('message', (message) => {
 
-    if ((message.channel.name === 'book-club') && message.content.startsWith('!getbook')){
+    if(message.content.startsWith('!getbook')){
         sendSynopsis(message);
     } else if ((message.channel.name === 'book-club') && message.content.startsWith('!pastbooks')){
         sendHistory(message, db);
