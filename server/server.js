@@ -97,7 +97,7 @@ function sendSynopsis(message) {
     books.search(searchString, function(error, results) {
         if (!error){
             
-            if (results[0].description.length > 2048){
+            if (results[0].description != null && results[0].description.length > 2048){
                 var description = results[0].description.substring(0, 2000) + '...';
             } else {
                 var description = results[0].description;
