@@ -200,39 +200,56 @@ function getFullHistory() {
     }
 
 function ripSA(message) {
-    switch(Math.round(Math.random() * 11)) {
+    var description = '*moderation*';
+    switch(Math.round(Math.random() * 15)) {
 			case 1:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+		    		description = message.channel.send('[If only someone had wished him a happy moderator day.](https://discord.com/channels/690677110603382814/697825393113301013/999013555103862805)');
 				break;
 			case 2:	
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[Sage advice.](https://discord.com/channels/690677110603382814/697825393113301013/999010609477726249)');
 				break;
 			case 3:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[Dont let it keep you down.](https://discord.com/channels/690677110603382814/697825393113301013/998797762646786092)');
 				break;
 			case 4:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[:metal:](https://discord.com/channels/690677110603382814/697825393113301013/998775645234548766)');
 				break;
 			case 5:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[Some say he remains out there to this day.](https://discord.com/channels/690677110603382814/697825393113301013/996955721335836692)');
 				break;
 			case 6:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[Me neither.](https://discord.com/channels/690677110603382814/697825393113301013/996902420468748379)');
 				break;
 			case 7:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[AF.](https://discord.com/channels/690677110603382814/697825393113301013/996551747441021039)');
 				break;
 			case 8:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[Gigachads get Gigavaxxed](https://discord.com/channels/690677110603382814/697825393113301013/996107208758669432)');
 				break;
 			case 9:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[Every day without SA is](https://discord.com/channels/690677110603382814/697825393113301013/994972671639035924)');
 				break;
 			case 10:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[microplastics.](https://discord.com/channels/690677110603382814/697825393113301013/992826461067157554)');
 				break;
 			case 11:
-				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				description = message.channel.send('[Boom.done](https://discord.com/channels/690677110603382814/697825393113301013/992584108712669224)');
+				break;
+		    case 12:
+				description = message.channel.send('[<3](https://discord.com/channels/690677110603382814/697825393113301013/992286561091719168)');
+				break;
+		    case 13:
+				description = message.channel.send('[Thom Yorkes biggest fan.](https://discord.com/channels/690677110603382814/697825393113301013/981716202734878740)');
+				break;
+		    case 14:
+				description = message.channel.send('[Pay your taxes.](https://discord.com/channels/690677110603382814/697825393113301013/954081787070537778)');
+				break;
+		    case 15:
+				description = message.channel.send('[Based.](https://discord.com/channels/690677110603382814/697892553478897735/774447904005161020)');
 				break;
 		}
+	const embed = new Discord.MessageEmbed()
+		.setTitle('In Memoriam')
+		.setDescription(description)
+	    message.channel.send(embed);
 }
