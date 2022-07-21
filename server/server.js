@@ -87,6 +87,8 @@ client.on('message', (message) => {
         addBook(message, db);
     } else if ((message.channel.name === 'book-club') && message.content.startsWith('!bookhelp')){
         sendHelp(message);
+    } else if (message.content.includes(' SA ')){
+        ripSA(message);
     }
 });
 
@@ -195,3 +197,41 @@ function getFullHistory() {
             console.log('Error retrieving history: ' + err);
         });
     }
+
+function ripSA(message) {
+    switch(Math.round(Math.random() * 11)) {
+			case 1:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 2:	
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 3:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 4:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 5:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 6:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 7:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 8:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 9:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 10:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+			case 11:
+				message.channel.send('[If only someone had wished him a happy moderator day](https://discord.com/channels/654719318378151956/656494077440688128/656495698388189214)');
+				break;
+		}
+}
