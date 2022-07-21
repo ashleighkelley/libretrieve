@@ -87,7 +87,8 @@ client.on('message', (message) => {
         addBook(message, db);
     } else if ((message.channel.name === 'book-club') && message.content.startsWith('!bookhelp')){
         sendHelp(message);
-    } else if (message.content.includes('SA')){
+    } else if ((message.channel.name != 'all-things-circa') && (message.channel.name != 'circa-social-media') &&
+	       (message.channel.name != 'introduce-yourselves') && message.content.includes('SA')){
 	console.log('SA trigger');
         ripSA(message);
     }
