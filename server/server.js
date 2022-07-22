@@ -202,7 +202,7 @@ function getFullHistory() {
 
 function ripSA(message) {
     var description = '*moderation*';
-    switch(Math.round(Math.random() * 15)) {
+    switch(Math.round(Math.random() * 32)) {
 			case 1:
 		    		description = '[If only someone had wished him a happy moderator day.](https://discord.com/channels/690677110603382814/697825393113301013/999013555103862805)';
 				break;
@@ -213,7 +213,7 @@ function ripSA(message) {
 				description = '[Dont let it keep you down.](https://discord.com/channels/690677110603382814/697825393113301013/998797762646786092)';
 				break;
 			case 4:
-				description = '[:metal:](https://discord.com/channels/690677110603382814/697825393113301013/998775645234548766)';
+				description = '[Rock on. :metal:](https://discord.com/channels/690677110603382814/697825393113301013/998775645234548766)';
 				break;
 			case 5:
 				description = '[Some say he remains out there to this day.](https://discord.com/channels/690677110603382814/697825393113301013/996955721335836692)';
@@ -247,6 +247,57 @@ function ripSA(message) {
 				break;
 		    case 15:
 				description = '[Based.](https://discord.com/channels/690677110603382814/697892553478897735/774447904005161020)';
+				break;
+		    case 16:
+				description = '[Grandpa appreciation.](https://discord.com/channels/690677110603382814/697127199341412405/697872286228807760)';
+				break;
+		    case 17:
+				description = '[Remember when he spent years begging for a smash competitor and then was "too busy" to play?](https://discord.com/channels/690677110603382814/697570845190520843/859449024112099338)';
+				break;
+		    case 18:
+				description = '[Millenials.](https://discord.com/channels/690677110603382814/697825393113301013/698175337259073616)';
+				break;
+		    case 19:
+				description = '[Obviously.](https://discord.com/channels/690677110603382814/697570845190520843/700376359045824613)';
+				break;
+		    case 20:
+				description = '[Subscribe to egg facts.](https://discord.com/channels/690677110603382814/697825393113301013/702896126474453044)';
+				break;
+		    case 21:
+				description = '[Boomer.](https://discord.com/channels/690677110603382814/697825393113301013/703247111436894298)';
+				break;
+		    case 22:
+				description = '[hwat.](https://discord.com/channels/690677110603382814/690678981606899812/702948385040236646)';
+				break;
+		    case 23:
+				description = '[Advice.](https://discord.com/channels/690677110603382814/697896969586081963/702966897758568569)';
+				break;
+		    case 24:
+				description = '[Fortnite.](https://discord.com/channels/690677110603382814/697572972130467950/703050560403800104)';
+				break;
+		    case 25:
+				description = '[Live life 5 seconds at a time.](https://discord.com/channels/690677110603382814/697825393113301013/703252641257488505)';
+				break;
+		    case 26:
+				description = '[Space.](https://discord.com/channels/690677110603382814/697825393113301013/703269936017047672)';
+				break;
+		    case 27:
+				description = '[!!!](https://discord.com/channels/690677110603382814/697825393113301013/703971924518109206) https://i.kym-cdn.com/entries/icons/mobile/000/023/397/C-658VsXoAo3ovC.jpg';
+				break;
+		    case 28:
+				description = '[Now watch me whip.](https://discord.com/channels/690677110603382814/697825393113301013/703972942362443866)';
+				break;
+		    case 29:
+				description = '[Rise and grind.](https://discord.com/channels/690677110603382814/697825393113301013/704286682182189096)';
+				break;
+		    case 30:
+				description = '[Always on that sigma male grindset.](https://discord.com/channels/690677110603382814/697825393113301013/956229631936172133)';
+				break;
+		    case 31:
+				description = '[frog.](https://discord.com/channels/690677110603382814/697570845190520843/899403676953739334)';
+				break;
+		    case 32:
+				description = '[sorry.](https://discord.com/channels/690677110603382814/697825393113301013/863600297226010634)';
 				break;
 		}
 	const embed = new Discord.MessageEmbed()
