@@ -202,7 +202,7 @@ function getFullHistory() {
 
 function ripSA(message) {
     var description = '*moderation*';
-    switch(Math.round(Math.random() * 32)) {
+    switch(Math.round(Math.random() * 36)) {
 			case 1:
 		    		description = '[If only someone had wished him a happy moderator day.](https://discord.com/channels/690677110603382814/697825393113301013/999013555103862805)';
 				break;
@@ -216,7 +216,7 @@ function ripSA(message) {
 				description = '[Rock on. :metal:](https://discord.com/channels/690677110603382814/697825393113301013/998775645234548766)';
 				break;
 			case 5:
-				description = '[Some say he remains out there to this day.](https://discord.com/channels/690677110603382814/697825393113301013/996955721335836692)';
+				description = '[weeb.](https://discord.com/channels/690677110603382814/697825393113301013/703257204974944409)';
 				break;
 			case 6:
 				description = '[Me neither.](https://discord.com/channels/690677110603382814/697825393113301013/996902420468748379)';
@@ -282,7 +282,7 @@ function ripSA(message) {
 				description = '[Space.](https://discord.com/channels/690677110603382814/697825393113301013/703269936017047672)';
 				break;
 		    case 27:
-				description = '[!!!](https://discord.com/channels/690677110603382814/697825393113301013/703971924518109206) https://i.kym-cdn.com/entries/icons/mobile/000/023/397/C-658VsXoAo3ovC.jpg';
+				description = '[!!!](https://discord.com/channels/690677110603382814/697825393113301013/703971924518109206)';
 				break;
 		    case 28:
 				description = '[Now watch me whip.](https://discord.com/channels/690677110603382814/697825393113301013/703972942362443866)';
@@ -298,6 +298,18 @@ function ripSA(message) {
 				break;
 		    case 32:
 				description = '[sorry.](https://discord.com/channels/690677110603382814/697825393113301013/863600297226010634)';
+				break;
+		    case 33:
+				description = '[Good boy.](https://discord.com/channels/690677110603382814/697572972130467950/725110571468324865)';
+				break;
+		    case 34:
+				description = '[Just like real life, amirite?.](https://discord.com/channels/690677110603382814/697570845190520843/708849400138432584)';
+				break;
+		    case 35:
+				description = '[Protect at all costs.](https://discord.com/channels/690677110603382814/697825393113301013/709781974293807117)';
+				break;
+		    case 36:
+				description = '[Wear heelys (or soaps) to escape your feelies.](https://discord.com/channels/690677110603382814/697572972130467950/719052256334315531)';
 				break;
 		}
 	const embed = new Discord.MessageEmbed()
