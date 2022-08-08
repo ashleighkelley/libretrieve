@@ -92,7 +92,7 @@ client.on('message', (message) => {
 	       (message.content.includes(' SA ') || message.content.includes(' SA') || message.content.includes(' SA') || message.content==='SA')){
         ripSA(message);
     } else if (message.content.includes('shleigh')) {
-	    message.reply({files: ["../mariah.jpg"] });
+	    message.reply({files: ["mariah.jpg"] });
     }
 });
 
@@ -204,7 +204,7 @@ function getFullHistory() {
 
 function ripSA(message) {
     var description = '*moderation*';
-    switch(Math.round(Math.random() * 36)) {
+    switch(Math.round(Math.random() * 42)) {
 			case 1:
 		    		description = '[If only someone had wished him a happy moderator day.](https://discord.com/channels/690677110603382814/697825393113301013/999013555103862805)';
 				break;
@@ -305,7 +305,7 @@ function ripSA(message) {
 				description = '[Good boy.](https://discord.com/channels/690677110603382814/697572972130467950/725110571468324865)';
 				break;
 		    case 34:
-				description = '[Just like real life, amirite?.](https://discord.com/channels/690677110603382814/697570845190520843/708849400138432584)';
+				description = '[Just like real life, amirite?](https://discord.com/channels/690677110603382814/697570845190520843/708849400138432584)';
 				break;
 		    case 35:
 				description = '[Protect at all costs.](https://discord.com/channels/690677110603382814/697825393113301013/709781974293807117)';
@@ -328,7 +328,7 @@ function ripSA(message) {
 		    case 41:
 				description = '[Eat your vegetables.](https://discord.com/channels/690677110603382814/697825393113301013/875096695225057341)';
 				break;
-		    case 41:
+		    case 42:
 				description = '[Still waiting on that recipe...](https://discord.com/channels/690677110603382814/697896969586081963/789170377741303828)';
 				break;
 		}
