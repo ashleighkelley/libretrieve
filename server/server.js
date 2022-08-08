@@ -88,7 +88,8 @@ client.on('message', (message) => {
     } else if ((message.channel.name === 'book-club') && message.content.startsWith('!bookhelp')){
         sendHelp(message);
     } else if ((message.channel.name != 'all-things-circa') && (message.channel.name != 'circa-social-media') &&
-	       (message.channel.name != 'introduce-yourselves') && message.content.includes('SA')){
+	       (message.channel.name != 'introduce-yourselves') && 
+	       (message.content.includes(' SA ') || message.content.includes(' SA') || message.content.includes(' SA') || message.content==='SA')){
         ripSA(message);
     } else if (message.content.includes('shleigh')) {
 	    message.reply({files: ["./mariah.jpg"] };
@@ -326,6 +327,9 @@ function ripSA(message) {
 				break;
 		    case 41:
 				description = '[Eat your vegetables.](https://discord.com/channels/690677110603382814/697825393113301013/875096695225057341)';
+				break;
+		    case 41:
+				description = '[Still waiting on that recipe...](https://discord.com/channels/690677110603382814/697896969586081963/789170377741303828)';
 				break;
 		}
 	const embed = new Discord.MessageEmbed()
