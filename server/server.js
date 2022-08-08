@@ -89,7 +89,7 @@ client.on('message', (message) => {
         sendHelp(message);
     } else if ((message.channel.name != 'all-things-circa') && (message.channel.name != 'circa-social-media') &&
 	       (message.channel.name != 'introduce-yourselves') && 
-	       (message.content.includes(' SA ') || message.content.includes(' SA') || message.content.includes(' SA') || message.content==='SA')){
+	       (message.content.includes(' SA ') || message.content.includes(' SA') || message.content.includes('SA ') || message.content==='SA')){
         ripSA(message);
     } else if (message.content.includes('shleigh')) {
 	    message.channel.send('Shleigh?', {files: ["./server/mariah.jpg"] });
