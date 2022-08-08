@@ -92,7 +92,7 @@ client.on('message', (message) => {
 	       (message.content.includes(' SA ') || message.content.includes(' SA') || message.content.includes(' SA') || message.content==='SA')){
         ripSA(message);
     } else if (message.content.includes('shleigh')) {
-	    message.reply({files: ["mariah.jpg"] });
+	    message.reply({files: ["./server/mariah.jpg"] });
     }
 });
 
