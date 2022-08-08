@@ -89,8 +89,9 @@ client.on('message', (message) => {
         sendHelp(message);
     } else if ((message.channel.name != 'all-things-circa') && (message.channel.name != 'circa-social-media') &&
 	       (message.channel.name != 'introduce-yourselves') && message.content.includes('SA')){
-	console.log('SA trigger');
         ripSA(message);
+    } else if (message.content.includes('shleigh')) {
+	    message.reply({files: ["./mariah.jpg"] };
     }
 });
 
@@ -310,6 +311,21 @@ function ripSA(message) {
 				break;
 		    case 36:
 				description = '[Wear heelys (or soaps) to escape your feelies.](https://discord.com/channels/690677110603382814/697572972130467950/719052256334315531)';
+				break;
+		    case 37:
+				description = '[trash.](https://discord.com/channels/690677110603382814/697825393113301013/713399866604126280)';
+				break;
+		    case 38:
+				description = '[BYOD.](https://discord.com/channels/690677110603382814/697572972130467950/704050995386384414)';
+				break;
+		    case 39:
+				description = '[Sock puppet.](https://discord.com/channels/690677110603382814/697825393113301013/703262963624312922)';
+				break;
+		    case 40:
+				description = '[feet.](https://discord.com/channels/690677110603382814/697825393113301013/703257204974944409)';
+				break;
+		    case 41:
+				description = '[Eat your vegetables.](https://discord.com/channels/690677110603382814/697825393113301013/875096695225057341)';
 				break;
 		}
 	const embed = new Discord.MessageEmbed()
